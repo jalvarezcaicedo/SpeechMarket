@@ -1,5 +1,12 @@
 *.iml
 .gradle
+.idea
+**/.DS_Store
+**/build
+**/*.idea
+**/*.iml
+**/bin
+**/gen
 /local.properties
 /.idea/workspace.xml
 /.idea/libraries
