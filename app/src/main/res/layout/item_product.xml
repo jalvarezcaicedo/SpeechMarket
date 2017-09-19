@@ -1,39 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/content_product"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="100dp">
 
-        <android.support.v4.widget.CircleImageView
+        <ImageView
             android:id="@+id/img_type"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            app:srcCompat="@drawable/ic_save" />
+            android:layout_margin="@dimen/max_margin"
+            android:contentDescription="@string/app_name"
+            android:src="@mipmap/ic_groceries" />
 
-        <TextView
-            android:id="@+id/prod_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignTop="@id/img_type"
-            android:layout_toRightOf="@id/img_type"
-            android:textColor="@color/black"
-            android:textSize="@dimen/dimen_text_size_label" />
-
-        <TextView
-            android:id="@+id/prod_amount"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignTop="@id/img_type"
-            android:layout_marginLeft="35dp"
-            android:layout_toRightOf="@id/prod_name"
-            android:textColor="@color/black"
-            android:textSize="@dimen/dimen_text_size_label" />
 
         <ImageView
             android:id="@+id/more_prod"
@@ -41,9 +26,9 @@
             android:layout_height="30dp"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:layout_alignTop="@id/img_type"
+            android:layout_marginTop="@dimen/max_margin"
             android:contentDescription="@string/app_name"
-            app:srcCompat="@drawable/ic_save" />
+            app:srcCompat="@drawable/ic_add" />
 
         <ImageView
             android:id="@+id/minus_prod"
@@ -52,9 +37,47 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_below="@id/more_prod"
-            android:layout_marginTop="10dp"
+            android:layout_marginBottom="@dimen/max_margin"
             android:contentDescription="@string/app_name"
-            app:srcCompat="@drawable/ic_delete" />
+            app:srcCompat="@drawable/ic_remove" />
+
+
+        <TextView
+            android:id="@+id/prod_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/img_type"
+            android:layout_marginRight="@dimen/min_margin"
+            android:layout_toLeftOf="@id/more_prod"
+            android:textColor="@color/black_text"
+            android:textSize="@dimen/dimen_text_size_label_plus" />
+
+        <TextView
+            android:id="@+id/prod_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/max_margin"
+            android:layout_marginLeft="@dimen/min_margin"
+            android:layout_marginTop="@dimen/min_margin"
+            android:layout_toRightOf="@id/img_type"
+            android:textColor="@color/black_text"
+            android:textSize="@dimen/dimen_text_size_label_normal"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/prod_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/prod_price"
+            android:layout_marginLeft="@dimen/min_margin"
+            android:layout_marginRight="@dimen/min_margin"
+            android:layout_marginTop="@dimen/max_margin"
+            android:layout_toLeftOf="@id/prod_amount"
+            android:layout_toRightOf="@id/img_type"
+            android:textColor="@color/gray_text"
+            android:textSize="@dimen/dimen_text_size_label_minus"
+            android:textStyle="bold" />
 
     </RelativeLayout>
 

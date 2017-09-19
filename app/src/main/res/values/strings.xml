@@ -6,4 +6,17 @@
     <string name="capture_failed">Por favor menciona el producto y valor</string>
     <string name="capture_prod_fail">Por favor menciona el nombre del producto</string>
     <string name="label_del">¿Eliminar?</string>
+    <string name="accept">aceptar</string>
+    <string name="cancel">cancelar</string>
+    <string name="title_remove">Eliminar producto</string>
+    <string name="text_remove">¿Desea eliminar este producto?</string>
+    <string name="no_data_available">Sin productos disponibles</string>
+    <string name="select_type">Selecciona el tipo de producto</string>
+
+    <!-- ImageTypes -->
+    <array name="types">
+        <item>@mipmap/ic_various</item>
+        <item>@mipmap/ic_groceries</item>
+        <item>@mipmap/ic_cleaner</item>
+    </array>
 </resources>
