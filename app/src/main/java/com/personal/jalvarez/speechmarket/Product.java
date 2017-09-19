@@ -21,24 +21,12 @@ class Product {
         return type;
     }
 
-    public void setType(int type) {
-        this.type = type;
-    }
-
     String getProductName() {
         return productName;
     }
 
-    public void setProductName(String productName) {
-        this.productName = productName;
-    }
-
     long getPrice() {
         return price;
-    }
-
-    public void setPrice(long price) {
-        this.price = price;
     }
 
     long getAmount() {

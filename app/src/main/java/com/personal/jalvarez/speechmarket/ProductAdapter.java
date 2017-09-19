@@ -10,7 +10,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -67,11 +66,6 @@ class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductHolder> 
         holder.prod.setText(productData.get(position).getProductName());
         holder.amount.setText(String.format("x %s", String.valueOf(productData.get(position).getAmount())));
         holder.price.setText(String.format("$ %s", String.valueOf(productData.get(position).getPrice() * productData.get(position).getAmount())));
-    }
-
-    public void addAll(ArrayList<Product> data) {
-        productData.addAll(data);
-        notifyDataSetChanged();
     }
 
     public void clear() {

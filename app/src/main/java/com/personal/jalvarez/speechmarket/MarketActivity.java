@@ -14,7 +14,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageSwitcher;
 import android.widget.ImageView;
@@ -28,7 +31,7 @@ import java.util.Map;
 
 public class MarketActivity extends AppCompatActivity {
     private final int REQ_CODE_SPEECH_INPUT = 100;
-    ArrayList<Integer> imageList;
+    private ArrayList<Integer> imageList;
     private ProductAdapter productAdapter;
     private RecyclerView recyclerProducts;
     private TextView emptyView;
@@ -180,7 +183,7 @@ public class MarketActivity extends AppCompatActivity {
         b.show();
     }
 
-    public Integer getImageTypeResource(boolean option) {
+    private Integer getImageTypeResource(boolean option) {
         if (option && index < (imageList.size() - 1)) {
             index += 1;
             return imageList.get(index);
@@ -205,5 +208,25 @@ public class MarketActivity extends AppCompatActivity {
         Snackbar.make(contentCoord, getString(R.string.capture_prod_fail), Snackbar.LENGTH_SHORT).show();
 
         return null;
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_market, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_save:
+                Log.e(getClass().getSimpleName(), "SAVE DATA");
+                return true;
+            case R.id.action_clean:
+                productAdapter.clear();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }
